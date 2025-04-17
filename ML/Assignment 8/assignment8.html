@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>assignment7</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>assignment8</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7480,12 +7480,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_1samp</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ranksums</span><span class="p">,</span> <span class="n">ttest_ind</span><span class="p">,</span> <span class="n">chi2_contingency</span>
 </pre></div>
 </div>
 </div>
@@ -7496,7 +7496,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">college_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'collegeData.csv'</span><span class="p">)</span>
@@ -7511,9 +7511,9 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div class="colab-df-container" id="df-fac3f2d6-6a5c-43e3-8387-dbbaad5e6696">
+<div class="colab-df-container" id="df-5d14fecf-58ed-4839-9b72-3ea32f9f6bd6">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -7790,7 +7790,7 @@ a.anchor-link {
 </div>
 <div class="colab-df-buttons">
 <div class="colab-df-container">
-<button class="colab-df-convert" onclick="convertToInteractive('df-fac3f2d6-6a5c-43e3-8387-dbbaad5e6696')" style="display:none;" title="Convert this dataframe to an interactive table.">
+<button class="colab-df-convert" onclick="convertToInteractive('df-5d14fecf-58ed-4839-9b72-3ea32f9f6bd6')" style="display:none;" title="Convert this dataframe to an interactive table.">
 <svg height="24px" viewbox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg">
 <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
 </svg>
@@ -7837,12 +7837,12 @@ a.anchor-link {
   </style>
 <script>
       const buttonEl =
-        document.querySelector('#df-fac3f2d6-6a5c-43e3-8387-dbbaad5e6696 button.colab-df-convert');
+        document.querySelector('#df-5d14fecf-58ed-4839-9b72-3ea32f9f6bd6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-fac3f2d6-6a5c-43e3-8387-dbbaad5e6696');
+        const element = document.querySelector('#df-5d14fecf-58ed-4839-9b72-3ea32f9f6bd6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -7860,8 +7860,8 @@ a.anchor-link {
       }
     </script>
 </div>
-<div id="df-696ba4e8-0bf3-4906-875a-2b9ef439ff5d">
-<button class="colab-df-quickchart" onclick="quickchart('df-696ba4e8-0bf3-4906-875a-2b9ef439ff5d')" style="display:none;" title="Suggest charts">
+<div id="df-6445758b-a3ee-453c-b7e5-66e1866c1be9">
+<button class="colab-df-quickchart" onclick="quickchart('df-6445758b-a3ee-453c-b7e5-66e1866c1be9')" style="display:none;" title="Suggest charts">
 <svg height="24px" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
 <g>
 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
@@ -7974,13 +7974,13 @@ a.anchor-link {
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-696ba4e8-0bf3-4906-875a-2b9ef439ff5d button');
+        document.querySelector('#df-6445758b-a3ee-453c-b7e5-66e1866c1be9 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-<div id="id_e646be6f-d126-421f-98f7-a69cf9ad2db6">
+<div id="id_20061cd1-21a4-453f-ad45-5451ef5a248b">
 <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -8020,7 +8020,7 @@ a.anchor-link {
 <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_e646be6f-d126-421f-98f7-a69cf9ad2db6 button.colab-df-generate');
+        document.querySelector('#id_20061cd1-21a4-453f-ad45-5451ef5a248b button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -8041,47 +8041,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dropouts</span> <span class="o">=</span> <span class="n">college_data</span><span class="p">[</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">graduates</span> <span class="o">=</span> <span class="n">college_data</span><span class="p">[</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dropouts_clean</span> <span class="o">=</span> <span class="n">college_data</span><span class="p">[</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">graduates_clean</span> <span class="o">=</span> <span class="n">college_data</span><span class="p">[</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Research-Question-1:-Do-students-who-drop-out-tend-to-have-lower-transferred-GPA-compared-to-those-who-graduate?">Research Question 1: Do students who drop out tend to have lower transferred GPA compared to those who graduate?<a class="anchor-link" href="#Research-Question-1:-Do-students-who-drop-out-tend-to-have-lower-transferred-GPA-compared-to-those-who-graduate?">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="a)-For-students-who-do-not-graduate:-The-average-transfer-GPA-is-less-than-2.75.">a) For students who do not graduate: The average transfer GPA is less than 2.75.<a class="anchor-link" href="#a)-For-students-who-do-not-graduate:-The-average-transfer-GPA-is-less-than-2.75.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average transfer GPA = 2.75</p>
-<p>Ha: The average transfer GPA &lt; 2.75</p>
 </div>
 </div>
 </div>
@@ -8090,11 +8056,66 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dropouts_transfer_gpa</span> <span class="o">=</span> <span class="n">dropouts</span><span class="p">[</span><span class="s1">'TransferGPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_dropout</span><span class="p">,</span> <span class="n">p_value_dropout</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">dropouts_transfer_gpa</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'less'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 1: Comparing medians of GPA (Wilcoxon Rank-Sum Test)</span>
+<span class="n">graduates_gpa</span> <span class="o">=</span> <span class="n">graduates_clean</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">dropouts_gpa</span> <span class="o">=</span> <span class="n">dropouts_clean</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">test_stat_gpa</span><span class="p">,</span> <span class="n">p_value_gpa</span> <span class="o">=</span> <span class="n">ranksums</span><span class="p">(</span><span class="n">graduates_gpa</span><span class="p">,</span> <span class="n">dropouts_gpa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 2: Comparing means of AgeAtStart (2-Sample t-Test)</span>
+<span class="n">graduates_age</span> <span class="o">=</span> <span class="n">graduates_clean</span><span class="p">[</span><span class="s1">'AgeAtStart'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">dropouts_age</span> <span class="o">=</span> <span class="n">dropouts_clean</span><span class="p">[</span><span class="s1">'AgeAtStart'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">test_stat_age</span><span class="p">,</span> <span class="n">p_value_age</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">graduates_age</span><span class="p">,</span> <span class="n">dropouts_age</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 3: Comparing medians of TransferGPA (Wilcoxon Rank-Sum Test)</span>
+<span class="n">graduates_transfer_gpa</span> <span class="o">=</span> <span class="n">graduates_clean</span><span class="p">[</span><span class="s1">'TransferGPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">dropouts_transfer_gpa</span> <span class="o">=</span> <span class="n">dropouts_clean</span><span class="p">[</span><span class="s1">'TransferGPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">test_stat_transfer_gpa</span><span class="p">,</span> <span class="n">p_value_transfer_gpa</span> <span class="o">=</span> <span class="n">ranksums</span><span class="p">(</span><span class="n">graduates_transfer_gpa</span><span class="p">,</span> <span class="n">dropouts_transfer_gpa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 4: Comparing means of TransferCredits (2-Sample t-Test)</span>
+<span class="n">graduates_transfer_credits</span> <span class="o">=</span> <span class="n">graduates_clean</span><span class="p">[</span><span class="s1">'TransferCredits'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">dropouts_transfer_credits</span> <span class="o">=</span> <span class="n">dropouts_clean</span><span class="p">[</span><span class="s1">'TransferCredits'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">test_stat_transfer_credits</span><span class="p">,</span> <span class="n">p_value_transfer_credits</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span>
+    <span class="n">graduates_transfer_credits</span><span class="p">,</span> <span class="n">dropouts_transfer_credits</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8105,11 +8126,21 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Dropout Students: </span><span class="si">{</span><span class="n">test_stat_dropout</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Dropout Students: </span><span class="si">{</span><span class="n">p_value_dropout</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Results for tests 1-4</span>
+<span class="n">results_tests_1_to_4</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"GPA Medians Test Statistic"</span><span class="p">:</span> <span class="n">test_stat_gpa</span><span class="p">,</span>
+    <span class="s2">"GPA Medians P-Value"</span><span class="p">:</span> <span class="n">p_value_gpa</span><span class="p">,</span>
+    <span class="s2">"Age Means Test Statistic"</span><span class="p">:</span> <span class="n">test_stat_age</span><span class="p">,</span>
+    <span class="s2">"Age Means P-Value"</span><span class="p">:</span> <span class="n">p_value_age</span><span class="p">,</span>
+    <span class="s2">"Transfer GPA Medians Test Statistic"</span><span class="p">:</span> <span class="n">test_stat_transfer_gpa</span><span class="p">,</span>
+    <span class="s2">"Transfer GPA Medians P-Value"</span><span class="p">:</span> <span class="n">p_value_transfer_gpa</span><span class="p">,</span>
+    <span class="s2">"Transfer Credits Means Test Statistic"</span><span class="p">:</span> <span class="n">test_stat_transfer_credits</span><span class="p">,</span>
+    <span class="s2">"Transfer Credits Means P-Value"</span><span class="p">:</span> <span class="n">p_value_transfer_credits</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">results_tests_1_to_4</span>
 </pre></div>
 </div>
 </div>
@@ -8119,47 +8150,18 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Dropout Students: -2.2076632896626656
-P-value For Dropout Students: 0.013896284659651276
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'GPA Medians Test Statistic': 38.12823902794451,
+ 'GPA Medians P-Value': 0.0,
+ 'Age Means Test Statistic': 1.2551304992860344,
+ 'Age Means P-Value': 0.20960262234043067,
+ 'Transfer GPA Medians Test Statistic': 7.572647069553644,
+ 'Transfer GPA Medians P-Value': 3.656948357918701e-14,
+ 'Transfer Credits Means Test Statistic': 8.034523946203917,
+ 'Transfer Credits Means P-Value': 2.4435242045889162e-15}</pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Since the p-value (0.0139) is less than the 5% significance level, we reject the null hypothesis. This suggests that, for students who did not graduate, the average transfer GPA is indeed less than 2.75.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="b)-For-students-who-graduate:-The-average-transfer-GPA-is-greater-than-2.8.">b) For students who graduate: The average transfer GPA is greater than 2.8.<a class="anchor-link" href="#b)-For-students-who-graduate:-The-average-transfer-GPA-is-greater-than-2.8.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average transfer GPA = 2.8</p>
-<p>Ha: The average transfer GPA &gt; 2.8</p>
 </div>
 </div>
 </div>
@@ -8168,11 +8170,56 @@ P-value For Dropout Students: 0.013896284659651276
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">graduates_transfer_gpa</span> <span class="o">=</span> <span class="n">graduates</span><span class="p">[</span><span class="s1">'TransferGPA'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_graduate</span><span class="p">,</span> <span class="n">p_value_graduate</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">graduates_transfer_gpa</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'greater'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 5: Association between Gender and Graduation (Chi-Square Test)</span>
+<span class="n">gender_contingency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'SexCode'</span><span class="p">],</span> <span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">])</span>
+<span class="n">chi2_gender</span><span class="p">,</span> <span class="n">p_value_gender</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">gender_contingency</span><span class="p">)</span>
+
+<span class="c1"># graduate_gender = graduates_clean['SexCode'].dropna()</span>
+<span class="c1"># gender_contingency = pd.crosstab(graduate_gender, graduates_clean['gradFlag'])</span>
+<span class="c1"># chi2_gender, p_value_gender, _, _ = chi2_contingency(gender_contingency)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 6: Association between Marital Status and Graduation (Chi-Square Test)</span>
+<span class="n">marital_contingency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'MaritalCode'</span><span class="p">],</span> <span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">])</span>
+<span class="n">chi2_marital</span><span class="p">,</span> <span class="n">p_value_marital</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">marital_contingency</span><span class="p">)</span>
+
+<span class="c1"># graduate_marital_contingency = graduates_clean['MaritalCode'].dropna()</span>
+<span class="c1"># marital_contingency = pd.crosstab(graduate_marital_contingency, graduates_clean['gradFlag'])</span>
+<span class="c1"># chi2_marital, p_value_marital, _, _ = chi2_contingency(marital_contingency)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test 7: Association between Previous Education and Graduation (Chi-Square Test)</span>
+<span class="n">prev_ed_contingency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">college_data</span><span class="p">[</span><span class="s1">'PrevEdCode'</span><span class="p">],</span> <span class="n">college_data</span><span class="p">[</span><span class="s1">'gradFlag'</span><span class="p">])</span>
+<span class="n">chi2_prev_ed</span><span class="p">,</span> <span class="n">p_value_prev_ed</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">prev_ed_contingency</span><span class="p">)</span>
+
+<span class="c1"># graduate_prev_ed_contingency = graduates_clean['PrevEdCode'].dropna()</span>
+<span class="c1"># prev_ed_contingency = pd.crosstab(graduate_prev_ed_contingency, graduates_clean['gradFlag'])</span>
+<span class="c1"># chi2_prev_ed, p_value_prev_ed, _, _ = chi2_contingency(prev_ed_contingency)</span>
 </pre></div>
 </div>
 </div>
@@ -8183,11 +8230,19 @@ P-value For Dropout Students: 0.013896284659651276
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Graduate Students: </span><span class="si">{</span><span class="n">test_stat_graduate</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Graduate Students: </span><span class="si">{</span><span class="n">p_value_graduate</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Results for tests 5-7</span>
+<span class="n">results_tests_5_to_7</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Gender Chi-Square Statistic"</span><span class="p">:</span> <span class="n">chi2_gender</span><span class="p">,</span>
+    <span class="s2">"Gender P-Value"</span><span class="p">:</span> <span class="n">p_value_gender</span><span class="p">,</span>
+    <span class="s2">"Marital Status Chi-Square Statistic"</span><span class="p">:</span> <span class="n">chi2_marital</span><span class="p">,</span>
+    <span class="s2">"Marital Status P-Value"</span><span class="p">:</span> <span class="n">p_value_marital</span><span class="p">,</span>
+    <span class="s2">"Previous Education Chi-Square Statistic"</span><span class="p">:</span> <span class="n">chi2_prev_ed</span><span class="p">,</span>
+    <span class="s2">"Previous Education P-Value"</span><span class="p">:</span> <span class="n">p_value_prev_ed</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">results_tests_5_to_7</span>
 </pre></div>
 </div>
 </div>
@@ -8197,358 +8252,16 @@ P-value For Dropout Students: 0.013896284659651276
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Graduate Students: 7.269468232482056
-P-value For Graduate Students: 3.484567369010292e-13
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'Gender Chi-Square Statistic': 18.947781730572082,
+ 'Gender P-Value': 1.3434539080515035e-05,
+ 'Marital Status Chi-Square Statistic': 76.0543852268735,
+ 'Marital Status P-Value': 1.1922501823455327e-15,
+ 'Previous Education Chi-Square Statistic': 239.19525107943014,
+ 'Previous Education P-Value': 5.511096347201127e-48}</pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The p-value is extremely low, well below the 5% significance level, so we reject the null hypothesis. This indicates that, for students who graduated, the average transfer GPA is significantly greater than 2.8.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Research-Question-2:-Do-students-who-drop-out-tend-to-have-a-shorter-time-gap-between-enrollment-and-the-start-of-the-semester-compared-to-those-who-graduate?">Research Question 2: Do students who drop out tend to have a shorter time gap between enrollment and the start of the semester compared to those who graduate?<a class="anchor-link" href="#Research-Question-2:-Do-students-who-drop-out-tend-to-have-a-shorter-time-gap-between-enrollment-and-the-start-of-the-semester-compared-to-those-who-graduate?">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="a)-For-students-who-do-not-graduate:-The-average-number-of-days-between-enrollment-and-the-start-of-the-semester-is-less-than-71-days.">a) For students who do not graduate: The average number of days between enrollment and the start of the semester is less than 71 days.<a class="anchor-link" href="#a)-For-students-who-do-not-graduate:-The-average-number-of-days-between-enrollment-and-the-start-of-the-semester-is-less-than-71-days.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average days between enrollment and semester start = 71</p>
-<p>Ha: The average days between enrollment and semester start &lt; 71</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dropouts_days_enroll</span> <span class="o">=</span> <span class="n">dropouts</span><span class="p">[</span><span class="s1">'DaysEnrollToStart'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_dropouts</span><span class="p">,</span> <span class="n">p_value_dropouts</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">dropouts_days_enroll</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'less'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Dropout Students: </span><span class="si">{</span><span class="n">test_stat_dropouts</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Dropout Students: </span><span class="si">{</span><span class="n">p_value_dropouts</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Dropout Students: -0.006328839851492547
-P-value For Dropout Students: 0.49747584434110703
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The p-value (0.4975) is greater than the 5% significance level, so we do not reject the null hypothesis. This indicates that we lack sufficient evidence to conclude that students who did not graduate had a shorter enrollment-to-start time than 71 days.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="b)-For-students-who-graduate:-The-average-number-of-days-between-enrollment-and-the-start-of-the-semester-is-greater-than-71-days.">b) For students who graduate: The average number of days between enrollment and the start of the semester is greater than 71 days.<a class="anchor-link" href="#b)-For-students-who-graduate:-The-average-number-of-days-between-enrollment-and-the-start-of-the-semester-is-greater-than-71-days.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average days between enrollment and semester start = 71</p>
-<p>Ha: The average days between enrollment and semester start &gt; 71</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">graduates_days_enroll</span> <span class="o">=</span> <span class="n">graduates</span><span class="p">[</span><span class="s1">'DaysEnrollToStart'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_graduates</span><span class="p">,</span> <span class="n">p_value_graduates</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">graduates_days_enroll</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'greater'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Graduate Students: </span><span class="si">{</span><span class="n">test_stat_graduates</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Graduate Students: </span><span class="si">{</span><span class="n">p_value_graduates</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Graduate Students: 0.19628723532239142
-P-value For Graduate Students: 0.4222035197119946
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The p-value (0.4222) is also greater than 5%, so we do not reject the null hypothesis here either. This suggests we lack sufficient evidence to claim that students who graduated had a longer enrollment-to-start time than 71 days.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Research-Question-3:-Do-students-who-drop-out-tend-to-have-lower-entrance-exam-score-compared-to-those-who-graduate?">Research Question 3: Do students who drop out tend to have lower entrance exam score compared to those who graduate?<a class="anchor-link" href="#Research-Question-3:-Do-students-who-drop-out-tend-to-have-lower-entrance-exam-score-compared-to-those-who-graduate?">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="a)-For-students-who-do-not-graduate:-The-average-entrance-exam-score-is-less-than-83.">a) For students who do not graduate: The average entrance exam score is less than 83.<a class="anchor-link" href="#a)-For-students-who-do-not-graduate:-The-average-entrance-exam-score-is-less-than-83.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average entrance exam score = 83</p>
-<p>Ha: The average entrance exam score &lt; 83</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dropouts_exam_score</span> <span class="o">=</span> <span class="n">dropouts</span><span class="p">[</span><span class="s1">'MaxENTEntranceScore'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_dropouts</span><span class="p">,</span> <span class="n">p_value_dropouts</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">dropouts_exam_score</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'less'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Dropout Students: </span><span class="si">{</span><span class="n">test_stat_dropouts</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Dropout Students: </span><span class="si">{</span><span class="n">p_value_dropouts</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Dropout Students: -2.9398551944074094
-P-value For Dropout Students: 0.0016966364249860896
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The p-value (0.0017) is less than the 5% significance level, so we reject the null hypothesis. This suggests that students who did not graduate had an average entrance exam score lower than 83.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="b)-For-students-who-graduate:-The-average-entrance-exam-score-is-greater-than-90.">b) For students who graduate: The average entrance exam score is greater than 90.<a class="anchor-link" href="#b)-For-students-who-graduate:-The-average-entrance-exam-score-is-greater-than-90.">¶</a></h4>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ho​: The average entrance exam score = 90</p>
-<p>Ha: The average entrance exam score &gt; 90</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">graduates_exam_score</span> <span class="o">=</span> <span class="n">graduates</span><span class="p">[</span><span class="s1">'MaxENTEntranceScore'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">test_stat_graduates</span><span class="p">,</span> <span class="n">p_value_graduates</span> <span class="o">=</span> <span class="n">ttest_1samp</span><span class="p">(</span><span class="n">graduates_exam_score</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">'greater'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Statistic For Graduate Students: </span><span class="si">{</span><span class="n">test_stat_graduates</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value For Graduate Students: </span><span class="si">{</span><span class="n">p_value_graduates</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Test Statistic For Graduate Students: 0.4259083577037395
-P-value For Graduate Students: 0.3351288593129971
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The p-value (0.3351) is greater than 5%, so we do not reject the null hypothesis. This indicates that there is insufficient evidence to conclude that students who graduated had an entrance exam score greater than 90.</p>
 </div>
 </div>
 </div>
