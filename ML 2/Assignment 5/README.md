@@ -1,23 +1,15 @@
-
-# Assignment 5: Healthcare Data Analysis
+# Assignment 5: Healthcare Data Analysis with K-Nearest Neighbors
 
 ## Description
-This project involves analyzing healthcare data to perform predictive modeling and statistical analysis. It includes exploratory data analysis (EDA), visualization, data preprocessing, and predictive modeling using Python. The analysis is performed within a Jupyter Notebook (`assignment5.ipynb`) and rendered interactively in HTML format (`assignment5.html`).
+This project applies K-Nearest Neighbors (KNN) classification to healthcare data to predict patient risk categories based on clinical features.  
+It focuses on data preprocessing, manual 10-fold cross-validation, hyperparameter tuning for \(k\) values, and model evaluation based on accuracy and mean squared error.
 
 ## Project Files
 
-- **assignment5.ipynb:**
-  - Jupyter Notebook containing Python scripts for the analysis.
-  - Includes data preprocessing, statistical modeling, and visualizations.
-
-- **assignment5.html:**
-  - HTML output of the notebook for interactive visualization of results.
-
-- **healthcareTrain.csv:**
-  - Training dataset containing healthcare-related metrics used for model training.
-
-- **healthcareTest.csv:**
-  - Test dataset used for evaluating the performance of predictive models.
+- **assignment5.ipynb**: Jupyter Notebook containing full preprocessing, modeling, and evaluation pipeline.
+- **assignment5.html**: Rendered HTML output of the notebook.
+- **healthcareTrain.csv**: Training dataset.
+- **healthcareTest.csv**: Test dataset.
 
 ## Prerequisites
 - Python 3.8+
